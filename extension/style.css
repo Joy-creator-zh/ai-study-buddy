@@ -1,0 +1,1343 @@
+/* 日间模式样式 */
+.theme-adaptive {
+  /* 基础颜色 - iOS风格配色 */
+  --bg-primary: rgba(255, 255, 255, 0.95);
+  --bg-secondary: rgba(242, 242, 247, 0.9);
+  --text-primary: #000000;
+  --text-secondary: #8e8e93;
+
+  /* 交互元素 - iOS蓝 */
+  --accent-color: #007aff;
+  --accent-hover: #0051a8;
+  --border-color: rgba(60, 60, 67, 0.12);
+  --divider-color: rgba(60, 60, 67, 0.06);
+
+  /* 组件特定颜色 */
+  --header-bg: rgba(255, 255, 255, 0.95);
+  --input-bg: rgba(242, 242, 247, 0.9);
+  --ai-answer-bg: rgba(242, 242, 247, 0.7);
+  --user-question-bg: #007aff;
+  --code-block-bg: rgba(242, 242, 247, 0.8);
+  --code-block-border: rgba(60, 60, 67, 0.1);
+
+  /* 代码高亮颜色 - 明亮模式 */
+  --code-comment: #707F8C;
+  --code-keyword: #AD3DA4;
+  --code-string: #D12F1B;
+  --code-number: #1C00CF;
+  --code-type: #3F6E75;
+  --code-function: #326D74;
+  --code-variable: #0B4FB6;
+  --code-operator: #0B4FB6;
+  --code-class: #3F6E75;
+  --code-builtin: #3F6E75;
+
+  /* 数学公式颜色 */
+  --math-color: var(--text-primary);
+  --math-bg: transparent;
+  --math-operator: #0B4FB6;
+  --math-number: #1C00CF;
+  --math-function: #326D74;
+  --math-symbol: #AD3DA4;
+
+  /* 滚动条 */
+  --scrollbar-bg: rgba(60, 60, 67, 0.06);
+  --scrollbar-thumb: rgba(60, 60, 67, 0.12);
+
+  /* 阴影效果 - iOS风格阴影 */
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+  /* 思维链样式 */
+  --reasoning-border: rgba(60, 60, 67, 0.12);
+  --reasoning-text: #666666;
+
+  /* 添加字体相关变量 */
+  --font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+  --font-size-base: 15px;
+  --line-height-base: 1.4;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 600;
+
+  /* 应用基础样式 */
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+
+  /* 添加字体重置 */
+  font-family: var(--font-family) !important;
+  font-size: var(--font-size-base) !important;
+  line-height: var(--line-height-base) !important;
+  font-weight: var(--font-weight-normal) !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+
+  /* 确保所有子元素继承字体设置 */
+  * {
+    font-family: inherit !important;
+    font-size: inherit !important;
+    line-height: inherit !important;
+    font-weight: inherit !important;
+    -webkit-font-smoothing: inherit !important;
+    -moz-osx-font-smoothing: inherit !important;
+  }
+}
+
+/* 确保对话内容使用正确的字体样式 */
+.theme-adaptive .ai-answer,
+.theme-adaptive .user-question {
+  font-family: var(--font-family) !important;
+  font-size: var(--font-size-base) !important;
+  line-height: var(--line-height-base) !important;
+  font-weight: var(--font-weight-normal) !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* 确保输入框使用正确的字体样式 */
+.theme-adaptive .expandable-textarea,
+.theme-adaptive .textarea-default {
+  font-family: var(--font-family) !important;
+  font-size: var(--font-size-base) !important;
+  line-height: var(--line-height-base) !important;
+  font-weight: var(--font-weight-normal) !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* 重置所有可能影响字体的元素 */
+.theme-adaptive p,
+.theme-adaptive span,
+.theme-adaptive div,
+.theme-adaptive textarea {
+  font-family: var(--font-family) !important;
+  font-size: var(--font-size-base) !important;
+  line-height: var(--line-height-base) !important;
+  font-weight: var(--font-weight-normal) !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* 暗色模式样式 */
+.theme-adaptive.dark-mode {
+  /* 基础颜色 - iOS暗色模式 */
+  --bg-primary: rgba(28, 28, 30, 0.95);
+  --bg-secondary: rgba(44, 44, 46, 0.9);
+  --text-primary: #ffffff;
+  --text-secondary: #98989d;
+
+  /* 交互元素 */
+  --accent-color: #0a84ff;
+  --accent-hover: #409cff;
+  --border-color: rgba(255, 255, 255, 0.15);
+  --divider-color: rgba(255, 255, 255, 0.08);
+
+  /* 组件特定颜色 */
+  --header-bg: rgba(28, 28, 30, 0.95);
+  --input-bg: rgba(58, 58, 60, 0.8);
+  --ai-answer-bg: rgba(58, 58, 60, 0.7);
+  --user-question-bg: #0a84ff;
+  --code-block-bg: rgba(44, 44, 46, 0.8);
+  --code-block-border: rgba(255, 255, 255, 0.1);
+
+  /* 代码高亮颜色 - 暗色模式 */
+  --code-comment: #7F8C98;
+  --code-keyword: #FF7AB2;
+  --code-string: #FF8170;
+  --code-number: #D9C97C;
+  --code-type: #78C2B3;
+  --code-function: #6BDFFF;
+  --code-variable: #5482FF;
+  --code-operator: #FF7AB2;
+  --code-class: #78C2B3;
+  --code-builtin: #78C2B3;
+
+  /* 数学公式颜色 */
+  --math-color: var(--text-primary);
+  --math-bg: transparent;
+  --math-operator: #FF7AB2;
+  --math-number: #D9C97C;
+  --math-function: #6BDFFF;
+  --math-symbol: #FF7AB2;
+
+  /* 滚动条 */
+  --scrollbar-bg: rgba(255, 255, 255, 0.04);
+  --scrollbar-thumb: rgba(255, 255, 255, 0.16);
+
+  /* 阴影效果 */
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.3);
+
+  /* 思维链样式 */
+  --reasoning-border: rgba(255, 255, 255, 0.15);
+  --reasoning-text: #98989d;
+
+  /* 应用基础样式 */
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 输入框和发送按钮样式 */
+.textarea-default {
+  width: calc(100% - 40px);
+  height: 44px;
+  min-height: 44px;
+  max-height: 120px;
+  padding: 12px 44px 12px 16px;
+  margin: 0;
+  box-sizing: border-box !important;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+  font-size: 15px !important;
+  line-height: 1.4 !important;
+  background-color: var(--input-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  resize: none;
+  overflow-y: auto;
+  transition: all 0.2s ease;
+  word-wrap: break-word;
+  word-break: normal;
+  hyphens: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+}
+
+.theme-adaptive .send-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--text-secondary);
+  z-index: 2;
+}
+
+.theme-adaptive .send-icon:hover {
+  opacity: 1;
+  color: var(--accent-color);
+}
+
+.theme-adaptive .send-icon:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* 输入框容器样式 */
+.input-container-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 16px;
+  background: inherit;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+.input-container {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 输入框样式优化 */
+.theme-adaptive .expandable-textarea {
+  width: 100%;
+  min-height: 44px;
+  max-height: 120px;
+  padding: 12px 44px 12px 16px;
+  margin: 0;
+  box-sizing: border-box !important;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+  font-size: 15px !important;
+  line-height: 1.4 !important;
+  background-color: var(--input-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  resize: none;
+  overflow-y: auto;
+  transition: all 0.2s ease;
+  word-wrap: break-word;
+  word-break: normal;
+  hyphens: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  /* 隐藏默认滚动条 */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* 隐藏 Webkit 默认滚动条 */
+.theme-adaptive .expandable-textarea::-webkit-scrollbar {
+  display: none;
+}
+
+/* 自定义滚动条样式 */
+.theme-adaptive .expandable-textarea.has-content::-webkit-scrollbar {
+  display: block;
+  width: 8px;
+  background-color: transparent;
+}
+
+.theme-adaptive .expandable-textarea.has-content::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 4px;
+}
+
+.theme-adaptive .expandable-textarea.has-content::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-bg);
+  border-radius: 4px;
+}
+
+/* Firefox 滚动条样式 */
+.theme-adaptive .expandable-textarea.has-content {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-bg);
+}
+
+/* 消息气泡基础样式 */
+.user-question,
+.ai-answer {
+  position: relative !important;
+  padding-right: 15px !important;
+  margin: 5px 0;
+  margin-bottom: 30px;
+  display: block !important;
+  clear: both !important;
+  max-width: calc(100% - 40px);
+  isolation: isolate; /* 创建新的层叠上下文 */
+}
+
+.ai-answer p,
+.user-question p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+/* 用户问题样式 */
+.theme-adaptive .user-question {
+  background-color: var(--user-question-bg);
+  color: white;
+  padding: 10px 12px;
+  margin: 12px 12px;
+  border-radius: 14px;
+  font-size: 15px;
+  line-height: 1.4;
+  max-width: 85%;
+  margin-left: auto;
+  border-bottom-right-radius: 4px;
+  display: inline-block;
+  float: right;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+/* AI 回答样式 */
+.theme-adaptive .ai-answer {
+  background-color: var(--ai-answer-bg);
+  color: var(--text-primary);
+  padding: 0px 12px;
+  margin: 12px 12px;
+  border-radius: 14px;
+  font-size: 15px;
+  line-height: 1.4;
+  max-width: 85%;
+  margin-right: auto;
+  border-bottom-left-radius: 4px;
+  display: inline-block;
+  float: left;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+/* 调整消息内容的间距 */
+.user-question p, .ai-answer p {
+  margin: 0;
+  padding: 0;
+}
+
+/* 调整连续消息的间距 */
+.user-question + .user-question,
+.ai-answer + .ai-answer {
+  margin-top: 2px;
+}
+
+/* 不同类型消息之间的间距 */
+.user-question + .ai-answer,
+.ai-answer + .user-question {
+  margin-top: 10px;
+}
+
+/* 图标包装器样式 */
+.icon-wrapper {
+  position: relative !important;
+  z-index: 1 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.icon-wrapper:hover {
+  opacity: 1;
+  transform: scale(1.1);
+  background-color: var(--bg-secondary);
+}
+
+.user-question .icon-wrapper:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.theme-adaptive.dark-mode .icon-wrapper:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.icon-wrapper:active {
+  transform: scale(0.92);
+  opacity: 0.6;
+}
+
+/* 图标容器基础样式 */
+.icon-container {
+  position: absolute !important;
+  bottom: -25px !important;
+  right: -5px !important;
+  display: none;
+  gap: 2px;
+  align-items: center;
+  z-index: 10 !important;
+  padding: 4px 6px;
+  border-radius: 8px;
+  background-color: var(--bg-secondary);
+  border: 0.5px solid var(--border-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transform: translateZ(0);
+}
+
+/* 图标基础样式 */
+.icon-container img {
+  width: 18px;
+  height: 18px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+/* 日间模式图标样式 */
+.theme-adaptive.light-mode .icon-container img {
+  filter: brightness(0.3);
+}
+
+/* 夜间模式图标样式 */
+.theme-adaptive.dark-mode .icon-container img {
+  filter: invert(1) brightness(0.9);
+}
+
+/* 用户消息中的图标样式 */
+.user-question .icon-container img {
+  filter: brightness(10);
+  opacity: 0.9;
+}
+
+/* 工具提示样式 */
+.tooltip .tooltiptext {
+  font-size: 9px;
+  padding: 3px 6px;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  border: none;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  visibility: hidden;
+  text-align: center;
+  position: absolute;
+  z-index: 1;
+  width: max-content;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.1px;
+}
+
+.theme-adaptive.dark-mode .tooltip .tooltiptext {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* 代码块基础样式 */
+.theme-adaptive pre.hljs {
+  background-color: var(--code-block-bg);
+  border: 1px solid var(--code-block-border);
+  border-radius: 8px;
+  margin: 1em 0;
+  position: relative;
+  overflow: visible;
+  padding: 16px;
+  font-family: "SF Mono", Monaco, Menlo, Consolas, "Ubuntu Mono", monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  letter-spacing: 0;
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+  word-break: break-all !important;
+  color: #24292f;  /* 添加默认文本颜色 */
+}
+
+/* 暗色模式下的代码块基础样式 */
+.theme-adaptive.dark-mode pre.hljs {
+  background-color: #161b22;  /* GitHub 暗色主题背景色 */
+  color: #e6edf3;  /* 暗色模式下的默认文本颜色 */
+}
+
+/* 代码自动换行样式 */
+.code-wrap,
+.code-wrap code {
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+  word-break: break-all !important;
+  tab-size: 2 !important;
+  -moz-tab-size: 2 !important;
+  max-width: 100% !important;
+  overflow-x: visible !important;
+}
+
+/* 移除所有与横向滚动相关的样式 */
+.code-block-wrapper,
+.code-block-wrapper pre,
+.code-block-wrapper code {
+  overflow-x: visible !important;
+  overflow: visible !important;
+}
+
+/* 调整代码块容器样式 */
+.code-block-wrapper {
+  position: relative !important;
+  overflow: visible !important; /* 允许按钮溢出显示 */
+  margin: 1em 0;
+  border-radius: 8px;
+  isolation: isolate; /* 创建新的层叠上下文 */
+}
+
+.code-block-wrapper pre {
+  margin: 0;
+  padding: 16px;
+  font-family: "SF Mono", Monaco, Menlo, Consolas, monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  overflow-x: auto;
+  border-radius: 12px;
+  color: inherit;  /* 继承父元素的文本颜色 */
+}
+
+.code-block-wrapper code {
+  font-family: "SF Mono", Monaco, Menlo, Consolas, "Ubuntu Mono", monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  tab-size: 4;
+  color: inherit;  /* 继承父元素的文本颜色 */
+}
+
+/* 明亮模式代码高亮 */
+.theme-adaptive .hljs {
+  color: #24292f;  /* GitHub 风格的基础文本颜色 */
+  background: transparent;
+}
+
+.theme-adaptive .hljs-comment,
+.theme-adaptive .hljs-quote {
+  color: #6e7781;  /* 更深的注释颜色 */
+  font-style: italic;
+}
+
+.theme-adaptive .hljs-keyword,
+.theme-adaptive .hljs-selector-tag,
+.theme-adaptive .hljs-subst {
+  color: #cf222e;  /* 关键字使用红色 */
+  font-weight: 600;
+}
+
+.theme-adaptive .hljs-number,
+.theme-adaptive .hljs-literal,
+.theme-adaptive .hljs-variable,
+.theme-adaptive .hljs-template-variable,
+.theme-adaptive .hljs-tag .hljs-attr {
+  color: #0550ae;  /* 数字和变量使用蓝色 */
+}
+
+.theme-adaptive .hljs-string,
+.theme-adaptive .hljs-doctag {
+  color: #0a3069;  /* 字符串使用深蓝色 */
+}
+
+.theme-adaptive .hljs-title,
+.theme-adaptive .hljs-section,
+.theme-adaptive .hljs-selector-id {
+  color: #8250df;  /* 标题和选择器使用紫色 */
+  font-weight: 600;
+}
+
+.theme-adaptive .hljs-type,
+.theme-adaptive .hljs-class .hljs-title {
+  color: #953800;  /* 类型使用棕色 */
+  font-weight: 600;
+}
+
+.theme-adaptive .hljs-regexp,
+.theme-adaptive .hljs-link {
+  color: #116329;  /* 正则表达式使用绿色 */
+}
+
+.theme-adaptive .hljs-symbol,
+.theme-adaptive .hljs-bullet {
+  color: #0550ae;  /* 符号使用蓝色 */
+}
+
+.theme-adaptive .hljs-built_in,
+.theme-adaptive .hljs-builtin-name {
+  color: #8250df;  /* 内置函数使用紫色 */
+}
+
+.theme-adaptive .hljs-meta {
+  color: #6e7781;  /* 元信息使用灰色 */
+}
+
+.theme-adaptive .hljs-deletion {
+  color: #cf222e;  /* 删除的内容使用红色 */
+}
+
+.theme-adaptive .hljs-addition {
+  color: #116329;  /* 添加的内容使用绿色 */
+}
+
+/* 暗色模式代码高亮 */
+.theme-adaptive.dark-mode .hljs {
+  color: var(--text-primary);
+}
+
+.theme-adaptive.dark-mode .hljs-comment,
+.theme-adaptive.dark-mode .hljs-quote {
+  color: #7ec699;
+  font-style: italic;
+}
+
+.theme-adaptive.dark-mode .hljs-keyword,
+.theme-adaptive.dark-mode .hljs-selector-tag,
+.theme-adaptive.dark-mode .hljs-subst {
+  color: #4aa8ff;
+  font-weight: bold;
+}
+
+.theme-adaptive.dark-mode .hljs-number,
+.theme-adaptive.dark-mode .hljs-literal,
+.theme-adaptive .hljs-variable,
+.theme-adaptive .hljs-template-variable,
+.theme-adaptive .hljs-built_in,
+.theme-adaptive .hljs-type {
+  color: #bd93f9;
+}
+
+.theme-adaptive.dark-mode .hljs-string,
+.theme-adaptive.dark-mode .hljs-doctag,
+.theme-adaptive.dark-mode .hljs-addition,
+.theme-adaptive.dark-mode .hljs-title,
+.theme-adaptive.dark-mode .hljs-section,
+.theme-adaptive.dark-mode .hljs-selector-id,
+.theme-adaptive.dark-mode .hljs-selector-class,
+.theme-adaptive.dark-mode .hljs-regexp,
+.theme-adaptive.dark-mode .hljs-attribute {
+  color: #ff7b72;
+}
+
+.theme-adaptive.dark-mode .hljs-symbol,
+.theme-adaptive.dark-mode .hljs-bullet,
+.theme-adaptive.dark-mode .hljs-link {
+  color: #bd93f9;
+}
+
+.theme-adaptive.dark-mode .hljs-deletion,
+.theme-adaptive.dark-mode .hljs-meta {
+  color: #8b949e;
+}
+
+.theme-adaptive.dark-mode .hljs-function {
+  color: #4aa8ff;
+}
+
+/* 复制按钮样式优化 */
+.theme-adaptive .code-block-wrapper .copy-button {
+  position: absolute !important;
+  top: 8px !important;
+  right: 8px !important;
+  z-index: 20 !important; /* 确保在代码块内容之上 */
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transform: translateY(2px);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.theme-adaptive .code-block-wrapper:hover .copy-button {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.theme-adaptive .code-block-wrapper .copy-button:hover {
+  color: var(--text-primary);
+  transform: translateY(0) scale(1.02);
+  box-shadow: var(--shadow-sm);
+}
+
+.theme-adaptive .code-block-wrapper .copy-button:active {
+  transform: translateY(1px) scale(0.98);
+  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-adaptive .code-block-wrapper .copy-button img {
+  width: 14px;
+  height: 14px;
+  opacity: 0.6;
+  transition: all 0.2s ease;
+}
+
+.theme-adaptive .code-block-wrapper .copy-button:hover img {
+  opacity: 0.8;
+}
+
+/* 复制成功状态 */
+@keyframes copiedAnimation {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  30% {
+    transform: translateY(-2px) scale(1.05);
+  }
+  60% {
+    transform: translateY(1px) scale(0.98);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+.theme-adaptive .code-block-wrapper .copy-button.copied {
+  background-color: var(--bg-secondary);
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+  animation: copiedAnimation 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-adaptive .code-block-wrapper .copy-button.copied img {
+  opacity: 1;
+  filter: brightness(1) sepia(1) saturate(5) hue-rotate(180deg);
+}
+
+/* 组件样式 */
+.theme-adaptive #ai-popup {
+  position: fixed;
+  width: 580px;
+  height: 380px;
+  padding-top: 16px;
+  background-color: var(--bg-primary);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  z-index: 2147483647;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+  contain: layout style paint;
+  transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.theme-adaptive #ai-popup.dragging {
+  transition: none !important;
+  pointer-events: none;
+  cursor: grabbing;
+}
+
+.theme-adaptive .drag-handle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background-color: var(--header-bg);
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--divider-color);
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  perspective: 1000;
+  -webkit-perspective: 1000;
+  contain: paint layout;
+  z-index: 2;
+}
+
+/* 右下角 resize 手柄样式 */
+.theme-adaptive #ai-popup .resize-handle {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 20px;
+  height: 20px;
+  cursor: se-resize;
+  z-index: 11;
+}
+
+/* 调整滚动条位置，避免与 resize 手柄冲突 */
+.ps__rail-y {
+  width: 0 !important;
+  right: 0 !important;
+  left: auto !important;
+  margin-top: 20px !important;
+  height: calc(100% - 100px) !important;
+  background-color: transparent !important;
+  opacity: 0 !important;
+  transition: opacity 0.2s ease !important;
+  z-index: 1;
+}
+
+/* 调整内容区域的内边距，为右侧滚动条留出空间 */
+#ai-response {
+  padding-top: 40px;
+  padding-right: 20px !important;
+  padding-left: 10px !important;
+  box-sizing: border-box;
+}
+
+/* 确保内容容器不会溢出 */
+.theme-adaptive #ai-response-container {
+  height: calc(100% - 65px) !important;
+  margin-bottom: 60px;
+  background-color: var(--bg-primary);
+  padding: 0 10px 40px 10px;
+  scrollbar-width: thin;
+  -ms-overflow-style: none;
+  position: relative;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  perspective: 1000;
+  -webkit-perspective: 1000;
+  overflow: hidden auto;
+  contain: paint layout;
+  &::-webkit-scrollbar {
+    width: 8px;
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb);
+    border-radius: 4px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+}
+
+.theme-adaptive #ai-response-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+/* 优化暗色模式下的样式 */
+.theme-adaptive.dark-mode .ai-answer {
+  background-color: var(--ai-answer-bg);
+  box-shadow: var(--shadow-sm);
+}
+
+/* 数学公式样式 */
+.theme-adaptive .math-inline,
+.theme-adaptive .math-block {
+  background: transparent !important;
+  color: inherit !important;
+}
+
+.theme-adaptive .math-block {
+  display: block;
+  margin: 1em 0;
+  text-align: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
+}
+
+.theme-adaptive .math-inline {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  margin: 0 0.2em;
+}
+
+/* MathJax 特定样式 */
+.theme-adaptive mjx-container {
+  background: transparent !important;
+  color: inherit !important;
+}
+
+.theme-adaptive mjx-container[display="true"] {
+  margin: 1em 0 !important;
+  padding: 0.5em 0 !important;
+  text-align: center !important;
+}
+
+.theme-adaptive mjx-container:not([display="true"]) {
+  display: inline-flex !important;
+  align-items: center !important;
+  margin: 0 0.2em !important;
+}
+
+/* 确保公式在暗色模式下正确显示 */
+.theme-adaptive.dark-mode mjx-container {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* 数学公式容器样式 */
+.theme-adaptive .ai-answer {
+  display: block;
+  text-align: left;
+}
+
+/* 块级公式容器样式 */
+.theme-adaptive .ai-answer .math-container {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 1em 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* 数学公式样式 */
+.theme-adaptive .ai-answer .MathJax,
+.theme-adaptive .ai-answer .MathJax_SVG,
+.theme-adaptive .ai-answer .MathJax_Display,
+.theme-adaptive .ai-answer mjx-container {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  max-width: 100% !important;
+  padding: 1px 0;
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+
+/* 行内公式样式 */
+.theme-adaptive .ai-answer mjx-container:not([display="true"]) {
+  display: inline-flex !important;
+  align-items: center !important;
+  vertical-align: middle !important;
+  margin: 0 0.2em !important;
+  font-size: 1em !important;
+}
+
+/* 块级公式样式 */
+.theme-adaptive .ai-answer mjx-container[display="true"] {
+  display: block !important;
+  width: fit-content !important;
+  margin: 1em auto !important;
+  text-align: center !important;
+  padding: 0.5em 0 !important;
+  font-size: 1.1em !important;
+}
+
+/* 确保公式容器不会影响行高 */
+.theme-adaptive .ai-answer p {
+  line-height: 1.6 !important;
+  margin: 0.8em 0 !important;
+  overflow-x: visible !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+}
+
+/* 优化公式渲染 */
+.theme-adaptive .ai-answer .MathJax {
+  outline: none !important;
+}
+
+/* 确保块级公式前后有足够空间 */
+.theme-adaptive .ai-answer p + mjx-container[display="true"] {
+  margin-top: 1em !important;
+}
+
+.theme-adaptive .ai-answer mjx-container[display="true"] + p {
+  margin-top: 1em !important;
+}
+
+/* 调整行内公式的基线对齐 */
+.theme-adaptive .ai-answer mjx-container:not([display="true"]) mjx-math {
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 0 !important;
+  vertical-align: baseline !important;
+}
+
+/* 自定义滚动条样式 */
+.ps__rail-x {
+  z-index: 10;
+  bottom: 0 !important;
+  height: 6px !important;
+  background-color: transparent !important;
+  opacity: 0;
+  transition: opacity 0.2s ease, background-color 0.2s ease !important;
+}
+
+.ps__thumb-x {
+  height: 6px !important;
+  bottom: 0 !important;
+  background-color: var(--scrollbar-thumb) !important;
+  border-radius: 3px !important;
+  transition: background-color 0.2s ease !important;
+}
+
+/* 容器悬浮时显示滚动条 */
+.code-block-wrapper:hover .ps__rail-x {
+  opacity: 1;
+  height: 6px !important;
+  background-color: var(--scrollbar-bg) !important;
+}
+
+/* 滚动条悬浮和激活状态 */
+.ps__rail-x:hover,
+.ps__rail-x:focus,
+.ps__rail-x.ps--clicking {
+  height: 12px !important;
+  background-color: var(--scrollbar-bg) !important;
+}
+
+.ps__rail-x:hover > .ps__thumb-x,
+.ps__rail-x:focus > .ps__thumb-x,
+.ps__rail-x.ps--clicking > .ps__thumb-x {
+  height: 12px !important;
+  bottom: 0 !important;
+}
+
+/* 调整代码块容器样式 */
+.code-block-wrapper {
+  position: relative;
+  margin: 12px 0;
+  border-radius: 12px;
+  background-color: var(--code-block-bg);
+  border: 1px solid var(--code-block-border);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.code-block-wrapper pre {
+  margin: 0;
+  padding: 16px;
+  font-family: "SF Mono", Monaco, Menlo, Consolas, monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  overflow-x: auto;
+  border-radius: 12px;
+  color: inherit;  /* 继承父元素的文本颜色 */
+}
+
+.code-block-wrapper code {
+  font-family: "SF Mono", Monaco, Menlo, Consolas, "Ubuntu Mono", monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  tab-size: 4;
+  color: inherit;  /* 继承父元素的文本颜色 */
+}
+
+/* 思维链样式 */
+.theme-adaptive .reasoning-content {
+  position: relative;
+  padding: 0px 6px;
+  margin: 8px 0;
+  border-left: 3px solid var(--reasoning-border);
+  color: var(--reasoning-text);
+  font-size: 14px;
+  line-height: 1.5;
+  border-radius: 0 8px 8px 0;
+  overflow: hidden;
+  transition: all 0.3s ease-out;
+}
+
+/* 思维链收缩状态 */
+.theme-adaptive .reasoning-content.collapsed {
+  max-height: 32px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+/* 思维链展开状态 */
+.theme-adaptive .reasoning-content.expanded {
+  max-height: none;
+  opacity: 1;
+}
+
+/* 思维链内容容器 */
+.theme-adaptive .reasoning-content-inner {
+  padding: 4px 0;
+  transition: opacity 0.3s ease-out;
+}
+
+/* 收缩状态下的文本省略 */
+.theme-adaptive .reasoning-content.collapsed .reasoning-content-inner {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: 0.7;
+}
+
+/* 展开状态下的内容 */
+.theme-adaptive .reasoning-content.expanded .reasoning-content-inner {
+  white-space: normal;
+  overflow: visible;
+  opacity: 1;
+}
+
+/* 思维链头部容器 */
+.theme-adaptive .reasoning-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 0;
+  color: var(--reasoning-text);
+  font-size: 13px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* 思维链切换按钮 */
+.theme-adaptive .reasoning-toggle {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-adaptive .reasoning-toggle:hover {
+  opacity: 1;
+}
+
+/* 切换按钮图标 */
+.theme-adaptive .reasoning-toggle::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-right: 2px solid var(--reasoning-text);
+  border-bottom: 2px solid var(--reasoning-text);
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+}
+
+/* 收缩状态的图标 */
+.theme-adaptive .reasoning-content.collapsed .reasoning-toggle::before {
+  transform: rotate(-45deg);
+}
+
+/* 展开状态的图标 */
+.theme-adaptive .reasoning-content.expanded .reasoning-toggle::before {
+  transform: rotate(45deg);
+}
+
+/* 确保最后一个消息的按钮正确显示 */
+.theme-adaptive #ai-response-container {
+  padding-bottom: 60px !important; /* 为最后一个消息的按钮预留空间 */
+}
+
+/* 修复最后一个消息的按钮位置 */
+.theme-adaptive #ai-response-container > :last-child {
+  margin-bottom: 40px !important; /* 确保最后一个消息有足够的底部间距 */
+}
+
+/* 确保按钮容器不会被截断 */
+.theme-adaptive .ai-answer,
+.theme-adaptive .user-question {
+  overflow: visible !important;
+  position: relative !important;
+}
+
+/* 优化按钮的显示层级 */
+.theme-adaptive .icon-wrapper {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Quick Action Buttons */
+.quick-action-buttons {
+  position: absolute;
+  z-index: 2147483647;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.2s ease;
+  animation: fadeIn 0.2s ease;
+}
+
+.quick-action-button {
+  width: 28px !important;
+  height: 28px !important;
+  padding: 4px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  opacity: 0.7;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quick-action-button:hover {
+  background-color: var(--bg-secondary);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.quick-action-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: var(--text-primary-filter, none);
+}
+
+.language-select {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 120px;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: var(--bg-primary);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  margin-top: 8px;
+  display: none;
+  z-index: 2147483647;
+}
+
+.language-option {
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--text-primary);
+}
+
+.language-option:hover {
+  background-color: var(--bg-secondary);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* 暗色模式图标适配 */
+.theme-adaptive.dark-mode .quick-action-button img {
+  filter: invert(1) brightness(0.9);
+}
+
+/* Loading icon 样式 */
+.loading-icon-wrapper {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  z-index: 2;
+}
+
+.loading-icon-wrapper:hover {
+  background-color: var(--bg-secondary);
+}
+
+.loading-icon {
+  width: 20px;
+  height: 20px;
+  animation: rotate 1s linear infinite;
+  color: var(--text-secondary);
+}
+
+.loading-icon.active {
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
